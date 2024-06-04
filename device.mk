@@ -91,5 +91,3 @@ TARGET_HAS_GENERIC_KERNEL_HEADERS := true
 # Userdata checkpoint
 PRODUCT_PACKAGES += \
     checkpoint_gc
-	
-TWRP_REQUIRED_MODULES += miui_prebuilt
