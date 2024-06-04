@@ -25,6 +25,9 @@ TARGET_2ND_CPU_VARIANT :=
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
     boot \
+    init_boot \
+    recovery \
+    mi_ext \
     dtbo \
     odm \
     product \
