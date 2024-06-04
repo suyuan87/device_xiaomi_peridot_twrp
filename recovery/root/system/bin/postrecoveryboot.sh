@@ -22,6 +22,7 @@ mkdir /data/media
 mkdir /tmp/install
 mkdir /tmp/install/bin
 
+insmod /vendor/lib/modules/1.1/xiaomi_touch.ko
 insmod /vendor/lib/modules/1.1/goodix_core.ko
 exit 0
 #
