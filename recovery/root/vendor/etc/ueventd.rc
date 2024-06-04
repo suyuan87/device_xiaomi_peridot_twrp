@@ -62,17 +62,24 @@ subsystem mem_buf_vm
 /dev/ccid_bridge          0660   system     system
 /dev/ipa                  0660   radio      radio
 /dev/wwan_ioctl           0660   radio      radio
+/dev/ipa_lnx_stats_ioctl  0640   radio      radio
 /dev/ipaNatTable          0660   radio      radio
 /dev/rmnet_ctrl           0660   usb        usb
 /dev/dpl_ctrl             0660   usb        usb
 /dev/ipa_odl_ctl          0660   radio      radio
 /dev/ipa_adpl             0660   system     oem_2905
 /dev/synx_device          0660   root       camera
+/dev/ubwcp                0660   root       camera
 /dev/hab                  0666   system     system
 /dev/iio:device*          0664   system     system
+/dev/qmc_dma              0660   radio      radio
+/dev/qmc_cma              0660   radio      radio
 
 #permissions for UFS RPMB BSG device node
 /dev/0:0:0:49476          0600   system     system
+
+#permissions for GPT listener on LUN4
+/dev/0:0:0:4              0600   system     root
 
 #permissions for CSVT
 /dev/smd11                0660   radio      radio
@@ -81,6 +88,9 @@ subsystem mem_buf_vm
 /dev/smd2                 0660   bluetooth  bluetooth
 /dev/smd3                 0660   bluetooth  bluetooth
 /dev/btpower              0660   bluetooth  system
+/dev/btfmslim             0660   bluetooth  system
+/dev/bt_cp_ctrl           0660   bluetooth  system
+/dev/btfmcodec_dev        0660   bluetooth  system
 
 #permissions for pta
 /dev/pta                  0660   system     system
@@ -147,6 +157,7 @@ subsystem mem_buf_vm
 /dev/qce                  0660   system     drmrpc
 /dev/smcinvoke            0660   system     drmrpc
 /dev/qsee_ipc_irq_spss    0660   system     drmrpc
+/dev/qti-smmu-proxy       0660   system     system
 /dev/seemplog             0660   system     system
 /dev/pft                  0660   system     drmrpc
 /dev/spcom                0660   system     system
@@ -174,6 +185,7 @@ subsystem mem_buf_vm
 
 #QDSS
 /dev/byte-cntr            0660   system    oem_2902
+/dev/byte-cntr1            0660   system    oem_2902
 /dev/mhi_qdss             0660   system    oem_2902
 /sys/class/qdss_bridge/mhi_qdss  mode      0660     system   oem_2902
 
@@ -184,8 +196,19 @@ subsystem mem_buf_vm
 #qvr
 /dev/qvr_external_sensor_ioctl      0660  system  system
 /sys/kernel/qvr_external_sensor/fd  0660  system  system
-/dev/bus/usb/*                      0660  root    usb
-/dev/hidraw*                        0660  root    usb
+/dev/bus/usb/001/002      0660   system     system
+/dev/bus/usb/001/003      0660   system     system
+/dev/bus/usb/001/004      0660   system     system
+/dev/bus/usb/001/005      0660   system     system
+/dev/bus/usb/002/002      0660   system     system
+/dev/bus/usb/002/003      0660   system     system
+/dev/bus/usb/002/004      0660   system     system
+/dev/bus/usb/002/005      0660   system     system
+/dev/bus/usb/003/002      0660   system     system
+/dev/bus/usb/003/003      0660   system     system
+/dev/bus/usb/003/004      0660   system     system
+/dev/bus/usb/003/005      0660   system     system
+/dev/hidraw*              0660   system     system
 
 # wlan
 /dev/wcnss_wlan           0660   system     system
@@ -204,7 +227,6 @@ subsystem mem_buf_vm
 /dev/msm_vidc_dec_sec     0660   system     audio
 /dev/msm_vidc_enc         0660   system     audio
 /dev/msm_rotator          0660   system     system
-/dev/hw_random            0600   root       root
 /dev/sdsprpc-smd          0660   system     system
 
 #permissions for audio
@@ -328,6 +350,10 @@ subsystem mem_buf_vm
 /dev/nfc-nci              0660    nfc         nfc
 /dev/nq-nci               0660    nfc         nfc
 /dev/assd                 0660    nfc         nfc
+/dev/st21nfc              0660    nfc         nfc
+
+# eSE permissions
+/dev/st54spi_gpio         0660   system     system
 
 # UIO devices
 /dev/uio0                 0660   system     system
@@ -343,6 +369,9 @@ subsystem mem_buf_vm
 # Ultrasound device
 /dev/usf1                 0660   system     system
 
+# xlog device
+/dev/xlog                 0660   system     audio
+
 # Ramdump devices
 /dev/ramdump*             0640   system     system
 
@@ -354,6 +383,10 @@ subsystem mem_buf_vm
 #ImproveTouch device
 /dev/hbtp_input           0660   system     system
 /dev/hbtp_vm              0660   system     system
+
+# LegacyTouch device
+/sys/kernel/qts/primary/trusted_touch*    0660   system     system
+/sys/kernel/qts/secondary/trusted_touch*  0660   system     system
 
 # Add device block for FRP
 /dev/block/platform/soc/7824900.sdhci/by-name/config    0600   system     system
@@ -372,22 +405,25 @@ subsystem mem_buf_vm
 # Kmsg device
 /dev/kmsg                                               0620   root       system
 
-#KGSL
-/sys/class/kgsl/kgsl-3d0    perfcounter              0660    root    shell
-
 # LED class devices
 /sys/class/leds/red      delay_on     0640    system    system
 /sys/class/leds/red      delay_off    0640    system    system
 /sys/class/leds/red      breath       0640    system    system
+/sys/class/leds/red      repeat       0640    system    system
+/sys/class/leds/red      hw_pattern   0640    system    system
 /sys/class/leds/red      trigger      0640    system    system
 /sys/class/leds/green    delay_on     0640    system    system
 /sys/class/leds/green    delay_off    0640    system    system
 /sys/class/leds/green    breath       0640    system    system
 /sys/class/leds/green    trigger      0640    system    system
+/sys/class/leds/green    repeat       0640    system    system
+/sys/class/leds/green    hw_pattern   0640    system    system
 /sys/class/leds/blue     delay_on     0640    system    system
 /sys/class/leds/blue     delay_off    0640    system    system
 /sys/class/leds/blue     breath       0640    system    system
 /sys/class/leds/blue     trigger      0640    system    system
+/sys/class/leds/blue     repeat       0640    system    system
+/sys/class/leds/blue     hw_pattern   0640    system    system
 
 # NPU device
 /dev/msm_npu             0644   system     system
@@ -397,10 +433,32 @@ subsystem mem_buf_vm
 /sys/class/dual_role_usb/*	power_role	0660	system	system
 /sys/class/dual_role_usb/*	mode		0660	system	system
 
+/sys/class/typec/port0      power_role  0660    system  system
+/sys/class/typec/port0      data_role   0660    system  system
+
+# USB Dynamic Disable
+/sys/bus/platform/devices/a600000.ssusb	dynamic_disable	0220	root	usb
+
+# USB autosuspend/wakeup settings
+/sys/bus/usb/devices/*      power/autosuspend          0660  system  usb
+/sys/bus/usb/devices/*      power/autosuspend_delay_ms 0660  system  usb
+/sys/bus/usb/devices/*      power/control              0660  system  usb
+/sys/bus/usb/devices/*      power/wakeup               0660  system  usb
+
+#USB root hub authorize setting
+/sys/bus/usb/devices/usb*   authorized                 0660  system  usb
+
+#USB mode setting
+/sys/bus/platform/devices/a600000.ssusb    mode        0660  system  usb
+/sys/bus/platform/devices/4e00000.ssusb    mode        0660  system  usb
+
 #Memory Offline
 /sys/devices/system/memory/memory* state    0660 system system
 
 /sys/devices/virtual/hdcp/msm_hdcp  min_level_change 0664    system  graphics
+
+#KGSL
+/sys/class/kgsl/kgsl-3d0    perfcounter              0660    root    shell
 
 # sys-fs display
 /sys/class/graphics/fb*     hpd                      0664    system  graphics
