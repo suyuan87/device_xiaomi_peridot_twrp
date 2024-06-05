@@ -153,7 +153,7 @@ TW_DEVICE_VERSION := Redmi Turbo3 by Suyuan
 TW_DEFAULT_LANGUAGE := zh_CN
 
 # Load kernel modules for touch & vibrator
-TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko gpr_dlkm.ko q6_notifier_dlkm.ko q6_pdr_dlkm.ko snd_event_dlkm.ko spf_core_dlkm.ko xiaomi_touch.ko goodix_core.ko"
+TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko xiaomi_touch.ko goodix_core.ko"
 
 # The path to a temperature sensor
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/virtual/thermal/thermal_zone50/temp"
