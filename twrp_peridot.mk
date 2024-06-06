@@ -1,25 +1,14 @@
 #
-# Copyright (C) 2023 The Android Open Source Project
-# Copyright (C) 2023 SebaUbuntu's TWRP device tree generator
+# Copyright (C) 2022 The Android Open Source Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Release name
-PRODUCT_RELEASE_NAME := peridot
-
 # Inherit from those products. Most specific first.
-# 引用默认的编译配置文件，core_64_bit必须先于其他引用，否则不生效
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Enable virtual A/B OTA
-$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
-
-# Configure emulated_storage.mk
-$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
-
-# Inherit some common TWRP stuff.
+# Inherit some common twrp stuff.
 $(call inherit-product, vendor/twrp/config/common.mk)
 
 # Inherit from peridot device
@@ -27,9 +16,9 @@ $(call inherit-product, device/xiaomi/peridot/device.mk)
 
 PRODUCT_DEVICE := peridot
 PRODUCT_NAME := twrp_peridot
-PRODUCT_BRAND := Redmi
-PRODUCT_MODEL := 24069RA21C
-PRODUCT_MANUFACTURER := Xiaomi
-#PRODUCT_RELEASE_NAME := Redmi Turbo3
+PRODUCT_BRAND := Xiaomi
+PRODUCT_MODEL := Redmi Turbo3
+PRODUCT_MANUFACTURER := xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
