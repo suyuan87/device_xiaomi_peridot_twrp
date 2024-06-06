@@ -23,19 +23,21 @@ TARGET_2ND_CPU_VARIANT := cortex-a75
 
 # A/B
 AB_OTA_UPDATER := true
-AB_OTA_PARTITIONS += \ 
-    mi_ext \
-	odm \
-	product \
-    system \
-	system_dlkm \
-	system_ext \
-	vendor \
-	vendor_dlkm \
-	vendor_boot \
-	boot \
+AB_OTA_PARTITIONS += \
+    boot \
+	mi_ext \
 	init_boot \
-	dtbo
+	system_dlkm \
+    dtbo \
+    odm \
+    product \
+    system \
+    system_ext \
+    vbmeta \
+    vbmeta_system \
+    vendor \
+    vendor_boot \
+    vendor_dlkm
 
 
 # AVB
