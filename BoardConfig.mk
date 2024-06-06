@@ -25,18 +25,17 @@ TARGET_2ND_CPU_VARIANT := cortex-a75
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \ 
     mi_ext \
-	odm \
-	product \
+    odm \
+    product \
     system \
-	system_dlkm \
-	system_ext \
-	vendor \
-	vendor_dlkm \
-	vendor_boot \
-	boot \
-	init_boot \
-	dtbo
-
+    system_dlkm \
+    system_ext \
+    vendor \
+    vendor_dlkm \
+    vendor_boot \
+    boot \
+    init_boot \
+    dtbo
 
 # AVB
 BOARD_AVB_ENABLE := true
