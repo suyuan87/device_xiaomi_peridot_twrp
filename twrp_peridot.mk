@@ -28,8 +28,8 @@ $(call inherit-product, device/xiaomi/peridot/device.mk)
 PRODUCT_DEVICE := peridot
 PRODUCT_NAME := twrp_peridot
 PRODUCT_BRAND := Redmi
-PRODUCT_MODEL := 23013RK75C
+PRODUCT_MODEL := 24069RA21C
 PRODUCT_MANUFACTURER := Xiaomi
-#PRODUCT_RELEASE_NAME := Redmi K60
+#PRODUCT_RELEASE_NAME := Redmi Turbo3
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
