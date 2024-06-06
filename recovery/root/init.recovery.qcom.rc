@@ -27,7 +27,7 @@
 #
 
 on init
-	start boot-hal-1-2
+    start boot-hal-1-2
     write /sys/class/backlight/panel0-backlight/brightness 120
     setprop sys.usb.configfs 1
 
