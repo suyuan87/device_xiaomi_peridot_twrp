@@ -27,13 +27,12 @@
 #
 
 on init
-	start boot-hal-1-2
     write /sys/class/backlight/panel0-backlight/brightness 120
     setprop sys.usb.configfs 1
 
 on boot
-	start health-hal-2-1
-	setprop sys.usb.config adb
+    start health-hal-2-1
+    setprop sys.usb.config adb
 
 on property:ro.boot.usbcontroller=*
     setprop sys.usb.controller ${ro.boot.usbcontroller}
