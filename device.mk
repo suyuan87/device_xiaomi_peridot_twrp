@@ -53,8 +53,8 @@ RELAX_USES_LIBRARY_CHECK := true
 
 # Crypto
 # PRODUCT_PACKAGES += \
-    # qcom_decrypt \
-    # qcom_decrypt_fbe
+#     qcom_decrypt \
+#     qcom_decrypt_fbe
 
 # Dynamic partition Handling
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
