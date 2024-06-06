@@ -166,6 +166,8 @@ TW_EXCLUDE_TWRPAPP := true
 
 # TWRP Version
 TW_DEVICE_VERSION := RedmiTurbo3 by Suyuan
+# TWRP DEFAULT LANGUAGE
+TW_DEFAULT_LANGUAGE := zh_CN
 
 # Load kernel modules for touch & vibrator
 TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko atmel_mxt_ts.ko focaltech_fts.ko fts_touch_spi.ko nt36xxx-i2c.ko nt36xxx-spi.ko synaptics_dsx.ko xiaomi_touch.ko"
