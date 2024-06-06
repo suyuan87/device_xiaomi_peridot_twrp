@@ -16,7 +16,7 @@
 
 
 cc_library {
-    name: "libgptutils.xiaomi_sm8635",
+    name: "libgptutils.xiaomi_taro",
     vendor: true,
     recovery_available: true,
     shared_libs: [
