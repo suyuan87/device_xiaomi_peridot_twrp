@@ -1,24 +1,28 @@
 #
-# Copyright (C) 2022 The Android Open Source Project
+# Copyright (C) 2023 The Android Open Source Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+DEVICE_PATH := device/xiaomi/peridot
 
-# Inherit some common twrp stuff.
-$(call inherit-product, vendor/twrp/config/common.mk)
+# Inherit from device.mk configuration
+$(call inherit-product, $(DEVICE_PATH)/device.mk)
 
-# Inherit from peridot device
-$(call inherit-product, device/xiaomi/peridot/device.mk)
+# Release name
+PRODUCT_RELEASE_NAME := peridot
 
+## Device identifier
 PRODUCT_DEVICE := peridot
 PRODUCT_NAME := twrp_peridot
 PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := Redmi Turbo3
-PRODUCT_MANUFACTURER := xiaomi
+PRODUCT_MODEL := RedmiTurbo3
+PRODUCT_MANUFACTURER := Xiaomi
 
-PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+# Assert
+TARGET_OTA_ASSERT_DEVICE := peridot
 
+# Theme
+TW_STATUS_ICONS_ALIGN := center
+TW_Y_OFFSET := 99
+TW_H_OFFSET := -99
