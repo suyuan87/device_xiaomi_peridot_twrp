@@ -41,6 +41,9 @@ ENABLE_VIRTUAL_AB := true
 
 PRODUCT_PACKAGES += \
     bootctrl.xiaomi_sm8550.recovery \
+    bootctrl.xiaomi_sm8550 \
+    android.hardware.boot@1.2-impl-qti \
+    android.hardware.boot@1.2-service \
     android.hardware.boot@1.2-impl-qti.recovery
 
 # Soong namespaces
