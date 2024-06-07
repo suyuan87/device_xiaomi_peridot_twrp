@@ -52,9 +52,9 @@ BUILD_BROKEN_DUP_RULES := true
 RELAX_USES_LIBRARY_CHECK := true
 
 # Crypto
-PRODUCT_PACKAGES += \
-    qcom_decrypt \
-    qcom_decrypt_fbe
+# PRODUCT_PACKAGES += \
+#     qcom_decrypt \
+#     qcom_decrypt_fbe
 
 # Dynamic partition Handling
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
