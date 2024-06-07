@@ -158,4 +158,4 @@ TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko fts_touch_spi.ko qti_battery_char
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone35/temp"
 TW_BATTERY_SYSFS_WAIT_SECONDS := 6
 TW_BACKUP_EXCLUSIONS := /data/fonts
-TW_DEVICE_VERSION := Xiaomi_13-A13
+TW_DEVICE_VERSION := RedmiTurbo3 by Suyuan
