@@ -1,7 +1,10 @@
 # Soft dependencies extracted from modules themselves.
+softdep mpam_policy mpam_policy pre: mpam_arch
 softdep q6_notifier_dlkm pre: qcom_q6v5_pas
+softdep sia91xx_dlkm pre: aw882xx_dlkm
 softdep c1dcvs_scmi_v2 pre: qcom_scmi_client
 softdep msm_video pre: subsys-pil-tz msm-mmrm
+softdep mpam pre: qcom_scmi_client
 softdep msm_kgsl pre: arm_smmu nvmem_qfprom socinfo
 softdep msm_performance pre: qcom_scmi_client
 softdep spcom pre: spss_utils
