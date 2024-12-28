@@ -2,13 +2,13 @@
     Input:
         vendor/qcom/opensource/core-utils/vendor_framework_compatibility_matrix.xml
         vendor/xiaomi/proprietary/misys/vendor_framework_compatibility_matrix.xml
-        vendor/xiaomi/proprietary/memory_tools/cld/vintf/vendor_framework_compatibility_matrix.xml
         vendor/qcom/opensource/commonsys/audio/ozo/vendor_framework_compatibility_matrix.xml
         device/xiaomi/missi/device_framework_compatibility_matrix/sensor_tools/vendor.xiaomi.sensor.citsensorservice.aidl_compatibility_matrix.xml
         device/xiaomi/missi/device_framework_compatibility_matrix/sensor_tools/vendor.xiaomi.sensor.communicate@1.0_compatibility_matrix.xml
         device/xiaomi/missi/device_framework_compatibility_matrix/sensor_tools/vendor.xiaomi.sensor.citsensorservice@1.1_compatibility_matrix.xml
         device/xiaomi/missi/device_framework_compatibility_matrix/sensor_tools/vendor.xiaomi.sensor.citsensorservice@2.0_compatibility_matrix.xml
         device/xiaomi/missi/device_framework_compatibility_matrix/antdtx/qssi_vendor_framework_compatibility_matrix.xml
+        device/xiaomi/missi/device_framework_compatibility_matrix/bluetooth/qssi_vendor_framework_compatibility_matrix.xml
         device/xiaomi/missi/device_framework_compatibility_matrix/bluetooth_audio/qssi_vendor_framework_compatibility_matrix.xml
         device/xiaomi/missi/device_framework_compatibility_matrix/cit/qssi_vendor_framework_compatibility_matrix.xml
         device/xiaomi/missi/device_framework_compatibility_matrix/connectivity_tools/vendor.xiaomi.cit.bluetooth@1.0_compatibility_matrix.xml
@@ -48,19 +48,17 @@
         device/xiaomi/missi/device_framework_compatibility_matrix/tempfix_bb/hardware/vendor_framework_compatibility_matrix.xml
         device/xiaomi/missi/device_framework_compatibility_matrix/mrm/hidl/vendor_framework_compatibility_matrix.xml
         device/xiaomi/missi/device_framework_compatibility_matrix/mrm/aidl/vendor_framework_compatibility_matrix.xml
-        device/xiaomi/missi/device_framework_compatibility_matrix/micar/interfaces/vehiclecore/vendor_framework_compatibility_matrix.xml
-        device/xiaomi/missi/device_framework_compatibility_matrix/bluetooth/qssi_vendor_framework_compatibility_matrix.xml
         device/xiaomi/missi/device_framework_compatibility_matrix/mitrustedui/vendor_framework_compatibility_matrix.xml
         vendor/xiaomi/proprietary/display/common/interfaces/vendor_framework_compatibility_matrix.xml
         device/xiaomi/missi/device_framework_compatibility_matrix/miAON/vendor_framework_compatibility_matrix.xml
         vendor/xiaomi/proprietary/mivifwk/interfaces/campostproc/vendor_framework_compatibility_matrix.xml
         vendor/xiaomi/proprietary/mivifwk/interfaces/bgservice/vendor_framework_compatibility_matrix.xml
         vendor/xiaomi/proprietary/mivifwk/interfaces/aidlbgservice/vendor_framework_compatibility_matrix.xml
+        device/xiaomi/missi/device_framework_compatibility_matrix/satellite/vendor_framework_compatibility_matrix.xml
+        device/xiaomi/missi/device_framework_compatibility_matrix/keeper/vendor_framework_compatibility_matrix.xml
         device/xiaomi/missi/device_framework_compatibility_matrix/fingerprint/vendor_framework_compatibility_matrix.xml
         vendor/xiaomi/proprietary/display/common/interfaces/aidl/vendor_framework_compatibility_matrix.xml
-        vendor/xiaomi/proprietary/audiocommon/CSTransferService/aidl/vendor_framework_compatibility_matrix.xml
         vendor/xiaomi/proprietary/cameraopt_release/config/device_framework_compatibility_matrix/quickcamera/quickcamera_compatibility_matrix.xml
-        vendor/xiaomi/proprietary/interfaces/satellite/aidl/vendor_framework_compatibility_matrix.xml
         vendor/xiaomi/proprietary/misight/aidl/impl/vendor_framework_compatibility_matrix.xml
         vendor/xiaomi/proprietary/misys/aidl/vendor_framework_compatibility_matrix.xml
 -->
@@ -333,21 +331,6 @@
         </interface>
     </hal>
     <hal format="hidl" optional="true">
-        <name>vendor.kineticsxr.hardware.nordic</name>
-        <version>1.0</version>
-        <interface>
-            <name>INordic</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>vendor.micar.hardware.vehiclecore</name>
-        <interface>
-            <name>IMiVehicleCore</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
         <name>vendor.nxp.hardware.nfc</name>
         <version>1.0-1</version>
         <version>2.0</version>
@@ -431,7 +414,7 @@
         <version>1.0-2</version>
         <version>2.0-1</version>
         <version>3.0</version>
-        <version>4.0-3</version>
+        <version>4.0-2</version>
         <interface>
             <name>ILocHidlGnss</name>
             <instance>gnss_vendor</instance>
@@ -680,7 +663,6 @@
         <version>2.0-1</version>
         <version>3.0</version>
         <version>3.1</version>
-        <version>3.2</version>
         <interface>
             <name>IQtiComposer</name>
             <instance>default</instance>
@@ -695,7 +677,7 @@
     </hal>
     <hal format="aidl" optional="true">
         <name>vendor.qti.hardware.display.config</name>
-        <version>1-11</version>
+        <version>1-7</version>
         <interface>
             <name>IDisplayConfig</name>
             <instance>default</instance>
@@ -824,21 +806,6 @@
         <interface>
             <name>IFstManager</name>
             <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>vendor.qti.hardware.hexlp</name>
-        <interface>
-            <name>IHexlpService</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.qti.hardware.improvetouch.touchcompanion</name>
-        <version>1.0</version>
-        <interface>
-            <name>ITouchCompanion</name>
-            <instance>TouchCompanionService</instance>
         </interface>
     </hal>
     <hal format="hidl" optional="true">
@@ -971,17 +938,6 @@
     <hal format="hidl" optional="true">
         <name>vendor.qti.hardware.qteeconnector</name>
         <version>1.0</version>
-        <interface>
-            <name>IAppConnector</name>
-            <instance>default</instance>
-        </interface>
-        <interface>
-            <name>IGPAppConnector</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>vendor.qti.hardware.qteeconnector</name>
         <interface>
             <name>IAppConnector</name>
             <instance>default</instance>
@@ -1216,14 +1172,6 @@
         </interface>
     </hal>
     <hal format="hidl" optional="true">
-        <name>vendor.qti.hardware.seccam</name>
-        <version>1.0</version>
-        <interface>
-            <name>ISecCam</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
         <name>vendor.qti.hardware.secureprocessor.device</name>
         <version>1.0</version>
         <interface>
@@ -1313,17 +1261,6 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="aidl" optional="true">
-        <name>vendor.qti.hardware.systemhelperaidl</name>
-        <interface>
-            <name>ISystemEvent</name>
-            <instance>default</instance>
-        </interface>
-        <interface>
-            <name>ISystemResource</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
     <hal format="hidl" optional="true">
         <name>vendor.qti.hardware.trustedui</name>
         <version>1.0-2</version>
@@ -1343,10 +1280,14 @@
         <interface>
             <name>ITrustedInput</name>
             <instance>default</instance>
+            <instance>qtee-tz</instance>
+            <instance>qtee-vm</instance>
         </interface>
         <interface>
             <name>ITrustedUI</name>
             <instance>default</instance>
+            <instance>qtee-tz</instance>
+            <instance>qtee-vm</instance>
         </interface>
     </hal>
     <hal format="hidl" optional="true">
@@ -1489,7 +1430,6 @@
     </hal>
     <hal format="aidl" optional="true">
         <name>vendor.qti.ims.datachannelservice</name>
-        <version>1-2</version>
         <interface>
             <name>IDataChannelService</name>
             <instance>default</instance>
@@ -1565,16 +1505,9 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="aidl" optional="true">
-        <name>vendor.qti.qepi</name>
-        <interface>
-            <name>IQEPI</name>
-            <instance>qepi</instance>
-        </interface>
-    </hal>
     <hal format="hidl" optional="true">
         <name>vendor.qti.qesdhal</name>
-        <version>1.0-4</version>
+        <version>1.0-3</version>
         <interface>
             <name>IQesdhal</name>
             <instance>default</instance>
@@ -1582,7 +1515,6 @@
     </hal>
     <hal format="aidl" optional="true">
         <name>vendor.qti.qesdhalaidl</name>
-        <version>1-2</version>
         <interface>
             <name>IQesdhal</name>
             <instance>default</instance>
@@ -1742,21 +1674,6 @@
         </interface>
     </hal>
     <hal format="hidl" optional="true">
-        <name>vendor.xiaomi.hardware.cld</name>
-        <version>1.0</version>
-        <interface>
-            <name>ICld</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>vendor.xiaomi.hardware.cstransfer</name>
-        <interface>
-            <name>ICSTransfer</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
         <name>vendor.xiaomi.hardware.displayfeature</name>
         <version>1.0</version>
         <interface>
@@ -1859,7 +1776,6 @@
     </hal>
     <hal format="aidl" optional="true">
         <name>vendor.xiaomi.hardware.micharge</name>
-        <version>1-2</version>
         <interface>
             <name>IMiCharge</name>
             <instance>default</instance>
@@ -2057,8 +1973,9 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="aidl" optional="true">
+    <hal format="hidl" optional="true">
         <name>vendor.xiaomi.hardware.satellite</name>
+        <version>1.0</version>
         <interface>
             <name>INTNRadio</name>
             <instance>satellite_slot1</instance>
@@ -2140,6 +2057,14 @@
         <version>1.0</version>
         <interface>
             <name>IMiQms</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.xiaomi.mslg.keeper</name>
+        <version>1.0</version>
+        <interface>
+            <name>IMSLgKeeper</name>
             <instance>default</instance>
         </interface>
     </hal>

@@ -59,10 +59,14 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
+#Import rc file
+import /vendor/etc/ueventd.qcom.userdebug.rc
+
+
 # Firmware directory Path
 # Below macro will be read by uevent and path will
 # be added to search path for firmware loading
-firmware_directories /vendor/firmware_mnt/image/
+firmware_directories /vendor/firmware_mnt/image/ /vendor/modem_firmware/image/
 
 subsystem dma_heap
     devname uevent_devpath
@@ -484,7 +488,6 @@ subsystem mem_buf_vm
 
 #USB mode setting
 /sys/bus/platform/devices/a600000.ssusb    mode        0660  system  usb
-/sys/bus/platform/devices/4e00000.ssusb    mode        0660  system  usb
 
 #Memory Offline
 /sys/devices/system/memory/memory* state    0660 system system
@@ -590,3 +593,6 @@ subsystem mem_buf_vm
 
 # devcoredump data attributes
 /sys/class/devcoredump/devcd*                           data                            0600    system  system
+
+#Virtualization Attributes
+/dev/gunyah                 0666   root     root
